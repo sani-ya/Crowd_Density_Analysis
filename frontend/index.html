@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdSense — AI Crowd Intelligence Platform</title>
+    <meta name="description" content="Next-generation real-time crowd density analysis powered by CSRNet and YOLOv8 deep learning models.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo">
+            <i class="ph ph-users-three"></i>
+            <span>CrowdSense</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How It Works</a></li>
+        </ul>
+        <a href="dashboard.html" class="nav-cta">Launch App <i class="ph ph-arrow-right"></i></a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    AI-Powered Real-Time Analysis
+                </div>
+                <h1 class="hero-title">
+                    Intelligent<br>
+                    <span class="title-highlight">Crowd Density</span><br>
+                    Intelligence
+                </h1>
+                <p class="hero-subtitle">
+                    Harness the power of CSRNet and YOLOv8 — purpose-built to monitor, estimate, and protect large public spaces with precision.
+                </p>
+                <div class="hero-actions">
+                    <a href="dashboard.html" class="btn-primary">
+                        Open Dashboard
+                        <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                    <a href="#features" class="btn-ghost">
+                        Explore Features
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>98%</strong>
+                        <span>Detection Accuracy</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>&lt;50ms</strong>
+                        <span>Processing Latency</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>1000+</strong>
+                        <span>People Tracked Live</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card main-card">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Crowd scene being analyzed" />
+                    <div class="scan-overlay">
+                        <div class="scan-line"></div>
+                    </div>
+                </div>
+                <div class="float-card card-count glass">
+                    <div class="fc-icon"><i class="ph ph-users"></i></div>
+                    <div class="fc-info">
+                        <span class="fc-label">Live Count</span>
+                        <strong class="fc-val">342</strong>
+                    </div>
+                    <div class="fc-trend up"><i class="ph ph-trend-up"></i> +12%</div>
+                </div>
+                <div class="float-card card-status glass">
+                    <div class="status-dot-ring normal"></div>
+                    <span>Density: <strong>Normal</strong></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT STRIP -->
+    <section class="about-strip" id="about">
+        <div class="strip-inner">
+            <p class="strip-text">
+                CrowdSense combines <strong>CSRNet density maps</strong> with <strong>real-time object detection</strong> to give you an unparalleled view of public spaces.
+            </p>
+        </div>
+    </section>
+
+    <!-- WHY SECTION -->
+    <section class="why-section">
+        <div class="why-inner">
+            <div class="why-image">
+                <img src="https://images.unsplash.com/photo-1519750783826-e2420f4d687f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Crowd monitoring system" />
+                <div class="why-img-card glass">
+                    <i class="ph ph-shield-check"></i>
+                    <p>Anomaly Detection Active</p>
+                </div>
+            </div>
+            <div class="why-content">
+                <h2 class="section-title">WHY CHOOSE<br>CROWDSENSE</h2>
+                <p class="section-subtitle">Here are the reasons our AI platform stands out as the ultimate choice for crowd intelligence and safety solutions.</p>
+                <div class="accordion">
+                    <div class="acc-item active">
+                        <button class="acc-trigger">
+                            <span>Unrivaled Precision</span>
+                            <i class="ph ph-plus acc-icon"></i>
+                        </button>
+                        <div class="acc-body">
+                            CSRNet heatmaps estimate crowd density where traditional box-detection models fail in ultra-dense scenarios. We go beyond bounding boxes.
+                        </div>
+                    </div>
+                    <div class="acc-item">
+                        <button class="acc-trigger">
+                            <span>Real-time Tracking</span>
+                            <i class="ph ph-plus acc-icon"></i>
+                        </button>
+                        <div class="acc-body">
+                            Individual movement trajectories are analyzed using DeepSORT tracking, enabling you to trace paths and identify anomalies in milliseconds.
+                        </div>
+                    </div>
+                    <div class="acc-item">
+                        <button class="acc-trigger">
+                            <span>Instant Alert System</span>
+                            <i class="ph ph-plus acc-icon"></i>
+                        </button>
+                        <div class="acc-body">
+                            Configurable threshold alerts fire the moment crowd density crosses safe limits, enabling rapid crowd control responses.
+                        </div>
+                    </div>
+                    <div class="acc-item">
+                        <button class="acc-trigger">
+                            <span>Hybrid AI Architecture</span>
+                            <i class="ph ph-plus acc-icon"></i>
+                        </button>
+                        <div class="acc-body">
+                            A dual-model system fuses YOLOv8 object detection with CSRNet density estimation for results no single model can achieve alone.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES CARDS -->
+    <section class="features" id="features">
+        <div class="features-inner">
+            <div class="feat-card dark">
+                <div class="feat-icon"><i class="ph ph-brain"></i></div>
+                <h3>AI DENSITY<br>ESTIMATION</h3>
+                <p>CSRNet generates precise density heatmaps to count thousands, even when people are tightly packed.</p>
+                <a href="dashboard.html" class="feat-link">SEE MORE <i class="ph ph-arrow-right"></i></a>
+            </div>
+            <div class="feat-card light">
+                <div class="feat-icon"><i class="ph ph-path"></i></div>
+                <h3>MOVEMENT<br>TRACKING</h3>
+                <p>DeepSORT-enhanced tracking monitors individual paths within a crowd in real-time.</p>
+                <a href="dashboard.html" class="feat-link">SEE MORE <i class="ph ph-arrow-right"></i></a>
+            </div>
+            <div class="feat-card light">
+                <div class="feat-icon"><i class="ph ph-warning"></i></div>
+                <h3>ANOMALY<br>DETECTION</h3>
+                <p>Intelligent behavioral analysis instantly flags panic, stampedes, or unusual groupings for rapid response.</p>
+                <a href="dashboard.html" class="feat-link">SEE MORE <i class="ph ph-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS BANNER -->
+    <section class="how-banner" id="how">
+        <div class="how-inner">
+            <div class="how-text">
+                <h2>ACTIONABLE INTELLIGENCE<br><span>IN REAL TIME</span></h2>
+                <p>Upload a scene, stream a live feed — CrowdSense processes it instantly and surfaces counts, heatmaps, and alerts from one clean dashboard.</p>
+                <a href="dashboard.html" class="btn-primary">Try the Dashboard <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+            <div class="how-number">
+                <span>AI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <i class="ph ph-users-three"></i>
+                <span>CrowdSense</span>
+            </div>
+            <p class="footer-note">Built with CSRNet + YOLOv8 + DeepSORT. A Hybrid Crowd Density Analysis System.</p>
+            <a href="dashboard.html" class="btn-primary">Launch Dashboard <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+    </footer>
+
+    <script>
+    // Sticky nav shadow
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        nav.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // Accordion
+    document.querySelectorAll('.acc-trigger').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.acc-item');
+            const isOpen = item.classList.contains('active');
+            document.querySelectorAll('.acc-item').forEach(i => i.classList.remove('active'));
+            if (!isOpen) item.classList.add('active');
+        });
+    });
+
+    // Scroll reveal
+    const revealItems = document.querySelectorAll('.feat-card, .why-inner, .how-banner, .features-inner, .why-section, .about-strip, .footer');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    revealItems.forEach(el => { el.classList.add('reveal'); observer.observe(el); });
+    </script>
+</body>
+</html>

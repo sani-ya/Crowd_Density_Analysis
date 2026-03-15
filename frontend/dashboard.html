@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdSense — Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dash-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar glass">
+            <div class="sb-logo">
+                <i class="ph ph-users-three"></i>
+                <span>CrowdSense</span>
+            </div>
+            <nav class="sb-nav">
+                <a href="#" class="sb-item active" id="navMonitor">
+                    <i class="ph ph-monitor-play"></i><span>Monitor</span>
+                </a>
+                <a href="#" class="sb-item" id="navAnalytics">
+                    <i class="ph ph-chart-line-up"></i><span>Analytics</span>
+                </a>
+                <a href="#" class="sb-item" id="navAlerts">
+                    <i class="ph ph-bell-ringing"></i><span>Alerts</span>
+                    <span class="sb-badge" id="alertBadge" style="display:none">1</span>
+                </a>
+            </nav>
+            <div class="sb-footer">
+                <a href="index.html" class="sb-item">
+                    <i class="ph ph-house"></i><span>Home</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="dash-main">
+
+            <!-- TOPBAR -->
+            <header class="topbar glass">
+                <div class="topbar-left">
+                    <h1 class="topbar-title">Scene Monitor</h1>
+                    <p class="topbar-sub">Real-time crowd density analysis</p>
+                </div>
+                <div class="topbar-right">
+                    <div class="status-badge" id="statusBadge">
+                        <div class="status-dot" id="statusDot"></div>
+                        <span id="statusText">Ready to Analyze</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENT AREA -->
+            <div class="content-area">
+
+                <!-- LEFT: VIEWER -->
+                <div class="viewer-col">
+                    <div class="panel glass viewer-panel" style="display: flex; flex-direction: column;">
+                        <div class="panel-hd">
+                            <span class="panel-label"><i class="ph ph-trend-up"></i> Live Crowd Density Trend</span>
+                        </div>
+                        <div class="chart-container" style="flex: 1; height: 100%; min-height: 420px; padding: 1.25rem; background: #ffffff;">
+                            <canvas id="densityChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- UPLOAD TOOLBAR -->
+                    <div class="upload-bar">
+                        <input type="file" id="fileInput" accept="image/*,video/*" />
+                        <button class="upload-btn" id="btnUpload">
+                            <i class="ph ph-upload-simple"></i>
+                            Upload Image / Video
+                        </button>
+                        <button class="webcam-btn" id="btnWebcam">
+                            <i class="ph ph-video-camera" id="webcamIcon"></i>
+                            <span id="webcamText">Start Webcam</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- RIGHT: METRICS -->
+                <div class="metrics-col">
+
+                    <!-- COUNT -->
+                    <div class="metric-card glass" id="countCard">
+                        <div class="mc-top">
+                            <span class="mc-label">Estimated Count</span>
+                            <div class="mc-icon primary-icon"><i class="ph ph-users"></i></div>
+                        </div>
+                        <div class="mc-value" id="crowdCount">0</div>
+                        <div class="mc-sub" id="crowdSub">No active analysis</div>
+                    </div>
+
+                    <!-- DENSITY -->
+                    <div class="metric-card glass" id="densityCard">
+                        <div class="mc-top">
+                            <span class="mc-label">Density Status</span>
+                            <div class="mc-icon" id="densityIcon"><i class="ph ph-gauge"></i></div>
+                        </div>
+                        <div class="density-bar-wrap">
+                            <div class="density-bar" id="densityBar" style="width: 0%;"></div>
+                        </div>
+                        <div class="mc-value sm" id="densityLabel">—</div>
+                    </div>
+
+                    <!-- ANOMALY -->
+                    <div class="metric-card glass" id="anomalyCard">
+                        <div class="mc-top">
+                            <span class="mc-label">Anomaly Detection</span>
+                            <div class="mc-icon" id="anomalyIcon"><i class="ph ph-shield-check"></i></div>
+                        </div>
+                        <div class="mc-value sm" id="anomalyStatus">No Anomaly</div>
+                        <div class="mc-sub" id="anomalySub">System monitoring</div>
+                    </div>
+
+                    <!-- CONFIDENCE -->
+                    <div class="metric-card glass">
+                        <div class="mc-top">
+                            <span class="mc-label">Model Confidence</span>
+                            <div class="mc-icon primary-icon"><i class="ph ph-brain"></i></div>
+                        </div>
+                        <div class="confidence-ring-wrap">
+                            <svg class="conf-ring" viewBox="0 0 64 64">
+                                <circle cx="32" cy="32" r="26" fill="none" stroke="var(--border)" stroke-width="5"/>
+                                <circle cx="32" cy="32" r="26" fill="none" stroke="var(--primary)" stroke-width="5"
+                                    stroke-dasharray="163.36" stroke-dashoffset="163.36"
+                                    stroke-linecap="round" transform="rotate(-90 32 32)"
+                                    id="confRingCircle"/>
+                            </svg>
+                            <span id="confPct">0%</span>
+                        </div>
+                        <div class="mc-sub" id="confSub">Awaiting analysis</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

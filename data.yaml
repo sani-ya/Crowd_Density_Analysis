@@ -1,0 +1,6 @@
+path: C:/miniproject2/data/WiderPerson
+train: train/images
+val: valid/images
+test: test/images
+nc: 5
+names: ['pedestrian', 'rider', 'partially-visible', 'ignore', 'crowd']
